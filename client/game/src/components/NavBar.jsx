@@ -3,26 +3,27 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <nav
-      className="fixed top left-0 right-
-    0 w-full bg-blue-400 shadow-md"
+      className="fixed top-0 w-full bg-blue-400 shadow-md"
     >
-      <div className="flex justify-between items-center px-8 py-2">
-        <div>
-          <Link
-            to="/"
-            className="text-white text-lg font-semibold hover:text-slate-800"
-          >
-            {" "}
-            Seek & Spot{" "}
-          </Link>
-        </div>
-        <ul className="flex flex-row justify-end p-5 space-x-4 ">
-          <li className="text-white text-lg font-semibold hover:text-slate-800">
-            <Link to="/"> Home </Link>
-          </li>
-          <li className="text-white text-lg font-semibold hover:text-slate-800">
-            <Link to="/LeaderBoard"> LeaderBoard </Link>
-          </li>
+      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+        <Link
+          to="/"
+          className="text-white text-lg font-semibold hover:text-slate-800"
+        >
+          Seek & Spot
+        </Link>
+
+        <ul className="hidden md:flex space-x-5 ">
+          {["Home", "Leader Board"].map((item) => (
+            <li key={item}>
+              <Link
+                to={item === "Home" ? "/" : `/${item}`}
+                className="text-white text-lg font-semibold hover:text-slate-800"
+                
+              > {item}</Link>
+            </li>
+          ))}
+          
         </ul>
       </div>
     </nav>
