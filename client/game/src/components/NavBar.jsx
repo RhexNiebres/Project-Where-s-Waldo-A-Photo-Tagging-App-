@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
+    const [isOpen,setIsopen] = useState(false);
+
+    const toggleMenu=()=>{
+        setIsopen(!isOpen);
+    }
+
   return (
     <nav
       className="fixed top-0 w-full bg-blue-400 shadow-md"
@@ -12,12 +19,15 @@ const NavBar = () => {
         >
           Seek & Spot
         </Link>
+            <button onClick={toggleMenu} className="md:hidden text-2xl text-white hover:text-slate-800">
+                {isOpen ? "x" : "☰"} 
+            </button>
 
         <ul className="hidden md:flex space-x-5 ">
           {["Home", "Leader Board"].map((item) => (
             <li key={item}>
               <Link
-                to={item === "Home" ? "/" : `/${item}`}
+                to={item === "Home" ? "/" : `/${item.replace(" ", "")}`}
                 className="text-white text-lg font-semibold hover:text-slate-800"
                 
               > {item}</Link>
@@ -26,6 +36,22 @@ const NavBar = () => {
           
         </ul>
       </div>
+          {isOpen&&(
+             <ul className="md:hidden flex flex-col items-center bg-blue-500 py-3 space-y-3">
+             {["Home", "Leader Board"].map((item) => (
+               <li key={item}>
+                 <Link
+                   to={item === "Home" ? "/" : `/${item.replace(" ", "")}`}
+                   className="text-white text-lg font-semibold hover:text-slate-800"
+                   onClick={() => setIsOpen(false)} 
+                 >
+                   {item}
+                 </Link>
+               </li>
+             ))}
+           </ul>
+          )}
+      
     </nav>
   );
 };
