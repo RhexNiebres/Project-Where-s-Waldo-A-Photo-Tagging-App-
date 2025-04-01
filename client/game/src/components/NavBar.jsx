@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBarsStaggered, faRectangleXmark  } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
     const [isOpen,setIsopen] = useState(false);
@@ -15,19 +17,19 @@ const NavBar = () => {
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         <Link
           to="/"
-          className="text-white text-lg font-semibold hover:text-slate-800"
+          className="text-white text-lg font-semibold hover:text-slate-800 active:text-slate-800"
         >
           Seek & Spot
         </Link>
             <button onClick={toggleMenu} className="md:hidden text-2xl text-white hover:text-slate-800">
-                {isOpen ? "x" : "☰"} 
+            <FontAwesomeIcon icon={isOpen ? faRectangleXmark  : faBarsStaggered} />
             </button>
 
         <ul className="hidden md:flex space-x-5 ">
           {["Home", "Leader Board"].map((item) => (
             <li key={item}>
               <Link
-                to={item === "Home" ? "/" : `/${item.replace(" ", "")}`}
+                to={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`}
                 className="text-white text-lg font-semibold hover:text-slate-800"
                 
               > {item}</Link>
@@ -41,8 +43,8 @@ const NavBar = () => {
              {["Home", "Leader Board"].map((item) => (
                <li key={item}>
                  <Link
-                   to={item === "Home" ? "/" : `/${item.replace(" ", "")}`}
-                   className="text-white text-lg font-semibold hover:text-slate-800"
+                   to={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`}
+                   className="text-white text-lg font-semibold active:text-slate-800"
                    onClick={() => setIsOpen(false)} 
                  >
                    {item}
