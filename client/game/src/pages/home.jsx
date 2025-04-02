@@ -1,8 +1,10 @@
-
+import { Link } from "react-router-dom";
+import NavBar from "../components/NavBar";
+import LeaderBoard from "../components/LeaderBoard";
 const Home = () => {
   return (
     <div className=" bg-slate-200 min-h-screen">
- 
+      <NavBar />
       <div className="flex items-center justify-center">
         <h1 className=" rounded text-6xl p-5 font-ui-monospace font-bold">Seek & Spot</h1>
       </div>
@@ -15,7 +17,7 @@ const Home = () => {
           <li></li>
         </ul>
       </section>
-
+      <LeaderBoard/>
     </div>
   );
 };
