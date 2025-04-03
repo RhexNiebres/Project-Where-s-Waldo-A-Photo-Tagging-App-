@@ -14,17 +14,17 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-blue-500 shadow-md h-16">
+    <nav className="fixed top-0 w-full bg-blue-500 shadow-md  h-16">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         <Link
           to="/"
-          className="text-white text-lg font-semibold hover:text-slate-800 active:text-slate-800"
+          className="text-white text-lg font-semibold hover:text-yellow-300 transition duration-300 active:text-yellow-300"
         >
           Seek & Spot
         </Link>
         <button
           onClick={toggleMenu}
-          className="md:hidden text-2xl text-white active:text-slate-800"
+          className="md:hidden text-2xl text-white hover:text-yellow-300 transition duration-300 active:text-yellow-300"
         >
           <FontAwesomeIcon icon={isOpen ? faRectangleXmark : faBarsStaggered} />
         </button>
@@ -38,7 +38,7 @@ const NavBar = () => {
                     ? "/"
                     : `/${item.toLowerCase().replace(" ", "")}`
                 }
-                className="text-white text-lg font-semibold hover:text-slate-800"
+                className="text-white text-lg font-semibold hover:text-yellow-300 transition duration-300 active:text-yellow-300"
               >
                 {" "}
                 {item}
@@ -47,6 +47,7 @@ const NavBar = () => {
           ))}
         </ul>
       </div>
+      
       {isOpen && (
         <ul className="md:hidden flex flex-col items-center bg-blue-500 py-3 space-y-3">
           {["Home", "Leader Board"].map((item) => (
@@ -57,7 +58,7 @@ const NavBar = () => {
                     ? "/"
                     : `/${item.toLowerCase().replace(" ", "")}`
                 }
-                className="text-white text-lg font-semibold active:text-slate-800"
+                className="text-white text-lg font-semibold hover:text-yellow-300 transition duration-300 active:text-yellow-300"
                 onClick={() => setIsOpen(false)}
               >
                 {item}
