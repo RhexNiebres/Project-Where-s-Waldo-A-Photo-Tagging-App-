@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import LeaderBoard from "../components/LeaderBoard";
-
+import Footer from "../components/Footer";
 const Home = () => {
   return (
     <div className=" bg-slate-100 min-h-screen flex-col flex items-center  ">
@@ -25,7 +25,7 @@ const Home = () => {
         </ul>
       </section>
 
-      <div className="bg-blue-500 flex flex-col items-center justify-center max-w-3xl w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] shadow-lg rounded-3xl p-4 text-white text-center font-bold mx-auto mt-10">
+      <div className="bg-blue-500 flex flex-col items-center justify-center max-w-3xl w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] shadow-lg rounded-3xl p-4 text-white text-center font-bold mx-auto mt-10 mb-5">
         <p>Ready to prove your skills? Let the hunt begin!🔍</p>
         <p>Good luck!</p>
         <Link
@@ -36,7 +36,7 @@ const Home = () => {
         </Link>
       </div>
 
-      <LeaderBoard />
+      <Footer/>
     </div>
   );
 };
