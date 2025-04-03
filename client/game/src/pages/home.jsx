@@ -7,7 +7,7 @@ const Home = () => {
     <div className=" bg-slate-100 min-h-screen flex-col flex items-center  ">
       <NavBar />
 
-      <section className="bg-blue-500 flex flex-col items-center justify-center max-w-3xl w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] shadow-lg rounded-3xl p-4 text-white text-center font-bold mx-auto mt-25">
+      <section className="bg-blue-500 flex flex-col items-center justify-center max-w-3xl w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] shadow-lg rounded-3xl p-4 text-white text-center font-bold mx-auto mt-24">
         <h1 className="text-3xl md:text-4xl font-extrabold p-2 text-yellow-300">
           Welcome to Seek & Spot
         </h1>
