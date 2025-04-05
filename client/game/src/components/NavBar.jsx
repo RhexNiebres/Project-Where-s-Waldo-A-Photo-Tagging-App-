@@ -18,7 +18,7 @@ const NavBar = () => {
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         <Link
           to="/"
-          className="text-white text-lg font-semibold hover:text-yellow-300 transition duration-300 active:text-yellow-300"
+          className="text-white text-lg font-bold hover:text-yellow-300 transition duration-300 active:text-yellow-300 hover:scale-110 active:scale-95"
         >
           Seek & Spot
         </Link>
@@ -29,16 +29,16 @@ const NavBar = () => {
           <FontAwesomeIcon icon={isOpen ? faRectangleXmark : faBarsStaggered} />
         </button>
 
-        <ul className="hidden md:flex space-x-5 ">
-          {["Home", "Leader Board"].map((item) => (
+        <ul className="hidden md:flex space-x-5">
+          {["Rules", "Leader Board"].map((item) => (
             <li key={item}>
               <Link
                 to={
-                  item === "Home"
-                    ? "/"
+                  item === "Rules"
+                    ? "/rules"
                     : `/${item.toLowerCase().replace(" ", "")}`
                 }
-                className="text-white text-lg font-semibold hover:text-yellow-300 transition duration-300 active:text-yellow-300"
+                className="text-white text-lg font-bold hover:text-yellow-300 transition duration-300 active:text-yellow-300"
               >
                 {" "}
                 {item}
@@ -50,12 +50,12 @@ const NavBar = () => {
       
       {isOpen && (
         <ul className="md:hidden flex flex-col items-center bg-blue-500 py-3 space-y-3">
-          {["Home", "Leader Board"].map((item) => (
+          {["Rules", "Leader Board"].map((item) => (
             <li key={item}>
               <Link
                 to={
-                  item === "Home"
-                    ? "/"
+                  item === "Rules"
+                    ? "/rules"
                     : `/${item.toLowerCase().replace(" ", "")}`
                 }
                 className="text-white text-lg font-semibold hover:text-yellow-300 transition duration-300 active:text-yellow-300"
