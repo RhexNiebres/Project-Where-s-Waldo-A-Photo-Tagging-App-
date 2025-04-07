@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-
+import { Link } from "react-router-dom";
 const Rules = () => {
   const howToPlay = [
     "Start the Game - a crowded image will appear. they are some where inside!🕵️‍♀️",
@@ -17,8 +17,8 @@ const Rules = () => {
 
   return (
     <div className=" bg-slate-100 min-h-screen flex-col flex items-center  ">
-      <Footer />
-      <section className="bg-blue-500 flex flex-col items-center justify-items-center max-w-3xl w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] shadow-lg rounded-3xl p-4 text-white text-center font-bold mx-auto mt-24">
+      <NavBar />
+      <section className="bg-blue-500 flex flex-col items-center justify-items-center max-w-3xl w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] shadow-lg rounded-3xl p-4 text-white text-center font-bold mx-auto mt-24 ">
         <h1 className="text-blue-500 text-5xl p-3 bg-slate-100 w-full rounded-2xl font-extrabold">
           Rules
         </h1>
@@ -49,8 +49,12 @@ const Rules = () => {
             </ul>
           </div>
         </div>
+
+        <Link to="/game" className="bg-white text-2xl text-blue-600  px-5 py-2 border rounded-2xl hover:bg-yellow-300 transition-transform duration-300 ease-in-out hover:scale-110 active:scale-95 shadow-md hover:shadow-xl ">
+          🎮Play Game
+        </Link>
       </section>
-      <NavBar />
+      <Footer />
     </div>
   );
 };
