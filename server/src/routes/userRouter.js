@@ -23,5 +23,30 @@ playerRouter.get("/", async (req, res) => {
   }
 });
 
+playerRouter.post("/", async (req, res) => {
+  try {
+    const { username, time } = req.body;
+
+    if (!username || !time) {
+      return res.status(400).json({ success: false, message: "Username and time are required." });
+    }
+
+    const newPlayer = await prisma.player.create({
+      data: {
+        username,
+        time,
+      },
+    });
+
+    if (!newPlayer) {
+      return res.status(500).json({ success: false, message: "Failed to save player." });
+    }
+
+    res.status(201).json({ success: true, player: newPlayer });
+  } catch (error) {
+    console.error("Error saving player:", error);
+    res.status(500).json({ success: false, message: "Server error." });
+  }
+});
 
 export default playerRouter;
