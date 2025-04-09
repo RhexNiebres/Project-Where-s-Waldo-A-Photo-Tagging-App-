@@ -1,7 +1,7 @@
 export const validateCharacter = async (characterId, x, y) => {
   try {
     const response = await fetch(
-      `http://localhost:8080/characters/${characterId}?x=${x}&y=${y}`
+      `http://localhost:8080/character/${characterId}?x=${x}&y=${y}`
     );
 
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
