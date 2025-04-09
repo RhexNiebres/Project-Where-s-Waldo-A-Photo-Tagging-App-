@@ -1,6 +1,6 @@
 export const fetchPlayers = async () => {
     try {
-      const response = await fetch("http://localhost:8080/player"); // API endpoint
+      const response = await fetch("http://localhost:8080/player"); 
   
       if (!response.ok) {
         throw new Error("Failed to fetch players.");
