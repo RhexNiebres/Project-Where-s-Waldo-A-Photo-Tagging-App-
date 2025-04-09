@@ -1,6 +1,6 @@
 export const submitPlayerData = async (playerData) => {
     try {
-      const response = await fetch('http://localhost:8080/player', {
+      const response = await fetch(import.meta.env.VITE_HOST + '/player', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
