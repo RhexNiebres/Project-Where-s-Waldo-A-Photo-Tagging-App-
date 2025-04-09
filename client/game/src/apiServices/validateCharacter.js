@@ -1,7 +1,7 @@
 export const validateCharacter = async (characterId, x, y) => {
   try {
     const response = await fetch(
-      import.meta.env.VITE_HOST + `/character/${characterId}?x=${x}&y=${y}`
+      import.meta.env.VITE_HOST + `/characters/${characterId}?x=${x}&y=${y}`
     );
 
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
