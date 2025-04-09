@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Character {
+  id            Int      @id @default(autoincrement()) 
+  name          String                                  
+  x             Float                                   
+  y             Float                                  
+  map_height    Float                                   
+  map_width     Float                                   
+}
+
+model Player {
+  id        Int       @id @default(autoincrement())    // Unique ID for the high score
+  username  String                                    // Username of the player
+  time      Float                                     // Time taken to complete the game (in seconds)
+  createdAt DateTime  @default(now())                  // Timestamp when the score was recorded
+}
