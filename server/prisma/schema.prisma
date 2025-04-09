@@ -11,14 +11,11 @@ model Character {
   id            Int      @id @default(autoincrement()) 
   name          String                                  
   x             Float                                   
-  y             Float                                  
-  map_height    Float                                   
-  map_width     Float                                   
+  y             Float                                                                 
 }
 
 model Player {
   id        Int       @id @default(autoincrement())    
   username  String                                   
-  time      Float                           //in seconds         
-  createdAt DateTime  @default(now())                  
+  time      Float                           //in seconds                         
 }
