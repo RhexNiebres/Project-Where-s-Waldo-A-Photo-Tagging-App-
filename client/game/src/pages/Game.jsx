@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Map from "../assets/map.jpg";
-import useDrag from "../hooks/useDrag";
+import useDrag from "../hooks/useDrag.js";
 import usePopup from "../hooks/usePopup";
 import { validateCharacter } from "../apiServices/validateCharacter";
 import Timer from "../components/Timer";
