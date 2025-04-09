@@ -17,8 +17,8 @@ model Character {
 }
 
 model Player {
-  id        Int       @id @default(autoincrement())    // Unique ID for the high score
-  username  String                                    // Username of the player
-  time      Float                                     // Time taken to complete the game (in seconds)
-  createdAt DateTime  @default(now())                  // Timestamp when the score was recorded
+  id        Int       @id @default(autoincrement())    
+  username  String                                   
+  time      Float                           //in seconds         
+  createdAt DateTime  @default(now())                  
 }
