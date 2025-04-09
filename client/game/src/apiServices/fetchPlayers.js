@@ -1,6 +1,6 @@
 export const fetchPlayers = async () => {
     try {
-      const response = await fetch("http://localhost:8080/player"); 
+      const response = await fetch(import.meta.env.VITE_HOST + "/player"); 
   
       if (!response.ok) {
         throw new Error("Failed to fetch players.");
