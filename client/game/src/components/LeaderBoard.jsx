@@ -7,7 +7,7 @@ const LeaderBoard = () => {
   const [players, setPlayers] = useState([]);
   const [error, setError] = useState(null);
 
-  // Fetch players on component mount
+
   useEffect(() => {
     const getPlayers = async () => {
       const result = await fetchPlayers();
