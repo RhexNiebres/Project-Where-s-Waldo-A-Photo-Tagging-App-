@@ -17,7 +17,7 @@ exports.validateCharacter = async (req, res) => {
       return res.status(404).json({ success: false, message: "Character not found." });
     }
 
-    const tolerance = 5;
+    const tolerance = 15;
 
     const isSelected =
       parseFloat(x) >= character.x - tolerance &&

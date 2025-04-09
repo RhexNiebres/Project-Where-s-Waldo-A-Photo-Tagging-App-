@@ -7,17 +7,16 @@ const LeaderBoard = () => {
   const [players, setPlayers] = useState([]);
   const [error, setError] = useState(null);
 
+  const getPlayers = async () => {
+    const result = await fetchPlayers();
+    if (result.success) {
+      setPlayers(result.players);
+    } else {
+      setError(result.error);
+    }
+  };
 
   useEffect(() => {
-    const getPlayers = async () => {
-      const result = await fetchPlayers();
-      if (result.success) {
-        setPlayers(result.players);
-      } else {
-        setError(result.error);
-      }
-    };
-
     getPlayers();
   }, []);
 
