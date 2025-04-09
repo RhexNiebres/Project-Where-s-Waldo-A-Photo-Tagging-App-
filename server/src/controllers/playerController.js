@@ -9,7 +9,7 @@ exports.getPlayers = async (req, res) => {
       },
     });
 
-    if (!players || players.length === 0) {
+    if (players.length === 0) {
       return res.status(404).json({ success: false, message: "No players found." });
     }
 
@@ -24,8 +24,12 @@ exports.createPlayer = async (req, res) => {
   try {
     const { username, time } = req.body;
 
-    if (!username || !time) {
-      return res.status(400).json({ success: false, message: "Username and time are required." });
+    // basic validation
+    if (!username || typeof username !== "string" || username.trim().length === 0) {
+      return res.status(400).json({ success: false, message: "Valid username is required." });
+    }
+    if (!time || typeof time !== "number" || isNaN(time)) {
+      return res.status(400).json({ success: false, message: "Valid time is required." });
     }
 
     const newPlayer = await prisma.player.create({
