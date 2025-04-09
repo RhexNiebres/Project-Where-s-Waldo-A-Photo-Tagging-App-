@@ -20,7 +20,7 @@ exports.getPlayers = async (req, res) => {
   }
 };
 
-exports.createPlayer = async (req, res) => {
+exports.createPlayers = async (req, res) => {
   try {
     const { username, time } = req.body;
 
