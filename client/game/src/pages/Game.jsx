@@ -16,7 +16,7 @@ const Game = () => {
   const characters = [
     { id: 1, name: "Waldo", image: "waldo.png" },
     { id: 2, name: "Wenda", image: "wenda.jpg" },
-    { id: 3, name: "Wizard", image: "/wizard.gif" },
+    { id: 3, name: "Wizard", image: "wizard.gif" },
   ];
 
   const {
