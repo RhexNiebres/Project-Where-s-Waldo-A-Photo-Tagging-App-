@@ -1,4 +1,5 @@
 export const validateCharacter = async (characterId, x, y) => {
+  console.log("VITE_HOST:", import.meta.env.VITE_HOST);
   try {
     const response = await fetch(
       import.meta.env.VITE_HOST + `/characters/${characterId}?x=${x}&y=${y}`
