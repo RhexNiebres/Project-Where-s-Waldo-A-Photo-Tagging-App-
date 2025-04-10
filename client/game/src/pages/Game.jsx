@@ -70,7 +70,7 @@ const Game = () => {
 
   const handleGameEnd = (time) => {
     setFinalTime(time);
-    alert(`🎉 You found all characters in ${time.toFixed(1)} seconds!`);
+    alert(`🎉Congratulations!🎉 You found all characters in ${time.toFixed(1)} seconds! Great Job!🎉`);
     navigate("/player-form", { state: { time } });
   };
 
