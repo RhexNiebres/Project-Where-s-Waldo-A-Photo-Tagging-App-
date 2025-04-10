@@ -6,7 +6,12 @@ const characterRouter = require("./routes/charactersRoutes");
 const indexRouter = require("./routes/indexRoutes");
 const cors = require("cors");
 
-app.use(cors());
+app.use(cors({
+  origin: GAME_CLIENT_HOST, //Netlify URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use("/players", playerRouter);
 app.use("/characters", characterRouter);
