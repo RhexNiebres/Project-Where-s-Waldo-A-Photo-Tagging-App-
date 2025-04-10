@@ -7,7 +7,7 @@ const characterRouter = require("./routes/charactersRoutes");
 const cors = require("cors");
 
 app.use(cors({
-  origin: GAME_CLIENT_HOST, //Netlify URL
+  origin: process.env.GAME_CLIENT_HOST, //Netlify URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
