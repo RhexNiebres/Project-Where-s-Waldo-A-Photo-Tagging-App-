@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareGithub } from "@fortawesome/free-brands-svg-icons";
   
 const Footer = () => {
+  const ownerName = import.meta.env.VITE_OWNER_NAME;
   return (
     <footer className="fixed bottom-0 left-0 flex flex-row justify-evenly  items-center bg-blue-500 text-white py-1 w-full">
-      <p>&copy; {new Date().getFullYear()} Rhex R. Niebres</p>
+      <p>&copy; {new Date().getFullYear()} {ownerName}</p>
 
       <a 
         href="https://github.com/RhexNiebres"
