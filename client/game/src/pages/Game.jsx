@@ -126,7 +126,7 @@ const Game = () => {
         <FoundCharacterMarkers foundCharacters={foundCharacters} />
       </div>
 
-      {/* Popup */}
+      {/* popup */}
       <CharacterSelectionPopup
         popupPosition={popupPosition}
         characters={characters}
