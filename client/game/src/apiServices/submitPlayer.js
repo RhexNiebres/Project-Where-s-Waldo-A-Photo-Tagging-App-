@@ -8,18 +8,15 @@ export const submitPlayerData = async (playerData) => {
       body: JSON.stringify(playerData),
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Error data:", errorData);
-      throw new Error(
-        `Failed to create player: ${errorData.message || "Unknown error"}`
-      );
+    const data = await response.json();
+
+    if (!response.ok || !data.success) {
+      return { success: false, error: data.message || "Failed to create player." };
     }
 
-    const data = await response.json();
-    return data;
+    return { success: true, player: data.player };
+
   } catch (error) {
-    console.error("Error:", error);
-    throw error;
+    return { success: false, error: error.message || "An unexpected error occurred." };
   }
 };
