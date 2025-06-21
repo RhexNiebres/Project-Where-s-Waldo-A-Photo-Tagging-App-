@@ -17,6 +17,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 app.use("/players", playerRouter);
 app.use("/characters", characterRouter);
+
+app.get("/ping", (req, res) => {
+  res.status(200).send("OK");
+});
+
 app.listen(process.env.APP_PORT, () => {
   console.log(`Server is running on port ${process.env.APP_PORT}`);
 });
